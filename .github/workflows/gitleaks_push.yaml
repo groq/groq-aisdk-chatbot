@@ -18,15 +18,19 @@ jobs:
       - name: GitLeaks
         uses: gacts/gitleaks@v1 # Action page: <https://github.com/gacts/gitleaks>
 
-      - name: Email security@definitive.io
+     - name: Email Security
         if: ${{ failure() && github.event.number == 0 }} # Only run for push events
-        uses: licenseware/send-email-notification@v1 # Action page: <https://github.com/licenseware/send-email-notification>
+        uses: JaSiLez/smtp-notifier@v1.1.2
         with:
-          api-key: ${{ secrets.SENDGRID_API_KEY }}
+          server_address: smtp.mandrillapp.com
+          server_port: 465
+          username: groq
+          password: ${{ secrets.MANDRILL_API_KEY }}
           subject: Secret detected in GitHub repository '${{ github.event.repository.name }}'
-          from-email: GitLeaks GitHub Action <no-reply@definitive.io>
-          to-email: security@definitive.io
-          markdown-body: |
+          from: GitLeaks GitHub Action <no-reply@groq.com>
+          to: definitive-security@groq.com
+          convert_markdown: true
+          html_body: |
             Secret detected in ${{ github.event.repository.url }}. See details below:
 
             * action: ${{ github.event.repository.url }}/actions/runs/${{ github.run_id }}
