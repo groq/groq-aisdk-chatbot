@@ -18,7 +18,7 @@ jobs:
       - name: GitLeaks
         uses: gacts/gitleaks@v1 # Action page: <https://github.com/gacts/gitleaks>
 
-     - name: Email Security
+      - name: Email Security
         if: ${{ failure() && github.event.number == 0 }} # Only run for push events
         uses: JaSiLez/smtp-notifier@v1.1.2
         with:
