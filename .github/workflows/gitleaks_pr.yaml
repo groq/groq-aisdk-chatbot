@@ -11,7 +11,7 @@ jobs:
     name: Detect Secrets
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Checkout full history to make .gitleaksignore work like it does locally
 
@@ -20,7 +20,7 @@ jobs:
 
       - name: Add Failure Instructions to Pull Request
         if: ${{ failure() }}
-        uses: thollander/actions-comment-pull-request@v1 # Action page: <https://github.com/thollander/actions-comment-pull-request>
+        uses: thollander/actions-comment-pull-request@v2 # Action page: <https://github.com/thollander/actions-comment-pull-request>
         with:
           message: |
             :warning: A secret was detected :warning:
