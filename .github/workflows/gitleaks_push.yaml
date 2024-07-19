@@ -11,7 +11,7 @@ jobs:
     name: Detect Secrets
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Checkout full history to make .gitleaksignore work like it does locally
 
@@ -20,7 +20,7 @@ jobs:
 
       - name: Email Security
         if: ${{ failure() && github.event.number == 0 }} # Only run for push events
-        uses: JaSiLez/smtp-notifier@v1.1.2
+        uses: JaSiLez/smtp-notifier@v1.1.3
         with:
           server_address: smtp.mandrillapp.com
           server_port: 465
