@@ -22,7 +22,7 @@ jobs:
 
       - name: Add Failure Instructions to Pull Request
         if: ${{ failure() }}
-        uses: thollander/actions-comment-pull-request@v2 # Action page: <https://github.com/thollander/actions-comment-pull-request>
+        uses: thollander/actions-comment-pull-request@v3 # Action page: <https://github.com/thollander/actions-comment-pull-request>
         with:
           message: |
             :warning: A secret was detected :warning:
