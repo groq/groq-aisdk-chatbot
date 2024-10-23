@@ -8,6 +8,11 @@
 # This file is managed by Terraform at https://github.com/groq/github #
 #######################################################################
 
+#######################################################################
+#                            DO NOT EDIT DIRECTLY.                    #
+# This file is managed by Terraform at https://github.com/groq/github #
+#######################################################################
+
 on: [push]
 
 jobs:
