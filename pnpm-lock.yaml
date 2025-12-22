@@ -49,7 +49,7 @@ dependencies:
     version: 0.6.2
   ai:
     specifier: ^3.1.5
-    version: 3.1.5(openai@4.24.7)(react@18.2.0)(solid-js@1.8.11)(svelte@4.2.9)(vue@3.4.15)(zod@3.22.4)
+    version: 3.1.5(openai@4.24.7)(react@18.2.0)(solid-js@1.8.11)(svelte@4.2.19)(vue@3.4.15)(zod@3.22.4)
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -1609,7 +1609,7 @@ packages:
       humanize-ms: 1.2.1
     dev: false
 
-  /ai@3.1.5(openai@4.24.7)(react@18.2.0)(solid-js@1.8.11)(svelte@4.2.9)(vue@3.4.15)(zod@3.22.4):
+  /ai@3.1.5(openai@4.24.7)(react@18.2.0)(solid-js@1.8.11)(svelte@4.2.19)(vue@3.4.15)(zod@3.22.4):
     resolution: {integrity: sha512-uE8EfcigIoep4NCqIOWsNUP/alyZ93XtsDsLjiop51y4lEtgJg0GzpbBRfYKaEK1O74HiQ2CmaeOOBlNVBBiIQ==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -1644,8 +1644,8 @@ packages:
       secure-json-parse: 2.7.0
       solid-js: 1.8.11
       solid-swr-store: 0.10.7(solid-js@1.8.11)(swr-store@0.10.6)
-      sswr: 2.0.0(svelte@4.2.9)
-      svelte: 4.2.9
+      sswr: 2.0.0(svelte@4.2.19)
+      svelte: 4.2.19
       swr: 2.2.0(react@18.2.0)
       swr-store: 0.10.6
       swrv: 1.0.4(vue@3.4.15)
@@ -4981,12 +4981,12 @@ packages:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
     dev: false
 
-  /sswr@2.0.0(svelte@4.2.9):
+  /sswr@2.0.0(svelte@4.2.19):
     resolution: {integrity: sha512-mV0kkeBHcjcb0M5NqKtKVg/uTIYNlIIniyDfSGrSfxpEdM9C365jK0z55pl9K0xAkNTJi2OAOVFQpgMPUk+V0w==}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:
-      svelte: 4.2.9
+      svelte: 4.2.19
       swrev: 4.0.0
     dev: false
 
@@ -5129,8 +5129,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte@4.2.9:
-    resolution: {integrity: sha512-hsoB/WZGEPFXeRRLPhPrbRz67PhP6sqYgvwcAs+gWdSQSvNDw+/lTeUJSWe5h2xC97Fz/8QxAOqItwBzNJPU8w==}
+  /svelte@4.2.19:
+    resolution: {integrity: sha512-IY1rnGr6izd10B0A8LqsBfmlT5OILVuZ7XsI0vdGPEvuonFV7NYEUK4dAkm9Zg2q0Um92kYjTpS1CAP3Nh/KWw==}
     engines: {node: '>=16'}
     dependencies:
       '@ampproject/remapping': 2.2.1
