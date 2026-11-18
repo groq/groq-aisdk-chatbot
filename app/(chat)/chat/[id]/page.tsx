@@ -8,36 +8,38 @@ import { AI } from '@/lib/chat/actions'
 import { Session } from '@/lib/types'
 
 export interface ChatPageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
 export async function generateMetadata({
   params
 }: ChatPageProps): Promise<Metadata> {
+  const { id } = await params
   const session = await auth()
 
   if (!session?.user) {
     return {}
   }
 
-  const chat = await getChat(params.id, session.user.id)
+  const chat = await getChat(id, session.user.id)
   return {
     title: chat?.title.toString().slice(0, 50) ?? 'Chat'
   }
 }
 
 export default async function ChatPage({ params }: ChatPageProps) {
+  const { id } = await params
   const session = (await auth()) as Session
   const missingKeys = await getMissingKeys()
 
   if (!session?.user) {
-    redirect(`/login?next=/chat/${params.id}`)
+    redirect(`/login?next=/chat/${id}`)
   }
 
   const userId = session.user.id as string
-  const chat = await getChat(params.id, userId)
+  const chat = await getChat(id, userId)
 
   if (!chat) {
     redirect('/')
