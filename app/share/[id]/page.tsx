@@ -11,15 +11,16 @@ export const runtime = 'edge'
 export const preferredRegion = 'home'
 
 interface SharePageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
 export async function generateMetadata({
   params
 }: SharePageProps): Promise<Metadata> {
-  const chat = await getSharedChat(params.id)
+  const { id } = await params
+  const chat = await getSharedChat(id)
 
   return {
     title: chat?.title.slice(0, 50) ?? 'Chat'
@@ -27,7 +28,8 @@ export async function generateMetadata({
 }
 
 export default async function SharePage({ params }: SharePageProps) {
-  const chat = await getSharedChat(params.id)
+  const { id } = await params
+  const chat = await getSharedChat(id)
 
   if (!chat || !chat?.sharePath) {
     notFound()
